@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class MinimaxTest {
+	String[] tictactoe;
+	String computerSymbol, playerSymbol;
+	
+	
+	public MinimaxTest(String playerSymbol, String computerSymbol) {
+		this.playerSymbol = playerSymbol;
+		this.computerSymbol = computerSymbol;
+		
+	}
+	
+	public static String chooseSymbol(String playerSymbol) {
+		String computerSymbol;
+		if (playerSymbol.equals("x")) {
+			computerSymbol = "o";				
+		}
+		else {
+			computerSymbol = "x";
+		}
+		return computerSymbol;
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Hello! Select between symbol x and o to proceed with the game! Symbol = " );
+		String userSymbol = in.nextLine();
+		System.out.println("The symbol being used by player X is " + userSymbol);
+		String computerSymbol = chooseSymbol(userSymbol);
+		
+		MinimaxTest minimax = new MinimaxTest(userSymbol, computerSymbol);
+		System.out.println("The symbol being used by player Y is " + minimax.computerSymbol);
+		
+	}
+}
